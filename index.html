@@ -11,7 +11,7 @@
 </head>
 <body>
   <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top mb-5 mb-lg-0">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 mb-lg-0 fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,31 +38,58 @@
   </header>
   <main>
     <section class="spacer">
-      <div class="m-5 m-xl-0"></div>
+      <div class="m-3 pt-2"></div>
     </section>
+   
+   
     <section id="hero">
-      <div class="container-fluid">
-        <div class="row bg-black align-items-center mt-5 mt-lg-0">
-          <div class="col-12 col-lg-4">
-            <div class="m-5">
-              <h4 class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, distinctio.</h4>
-              <p class="mb-5 text-white">Lorem ipsum dolor sit amet.</p>
-              <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores reiciendis numquam animi optio, ratione enim dolorem eius ex. Ut, repudiandae!</p>
-              <a href="http://" class="btn btn-outline-white py-1 px-3 rounded-5">Read More</a>
-            </div>
-          
-          </div>
-          <div class="col-12 col-lg-8">
-            <div class="row">
-              <div style="background-image: url(./public/image/2528469.jpg);background-size: cover; height: 500px; background-position: center;">
+      <div class="d-flex">
+      <button class="btn btn-pink prev"><i class="bi bi-arrow-left-circle-fill"></i></button>
 
-               
-              </div>
+        <!-- left -->
+        <div id="image_slide" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./public/image/wepik-export-20230619140319mzH1.png" class="d-block w-100 object-fit-cover" height="500px" alt="...">
             </div>
-          </div>
-
+            <div class="carousel-item">
+              <img src="./public/image/wepik-export-20230619140226c5Md.png" class="d-block w-100 object-fit-cover" height="500px" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./public/image/wepik-export-20230619140133DqhL.png" class="d-block w-100 object-fit-cover" height="500px" alt="...">
+            </div>
+          </div> 
         </div>
+        <!-- right -->
+     
+        <div id="text_slide" class="carousel slide bg-black text-white">
+          <div class="carousel-inner">
+            <div class="carousel-item text-center p-5 justify-content-center active">
+              
+              <h1>Autoplaying carousels</h1>
+              <p class="mb-5">Lorem ipsum dolor sit amet consectetur dolore?</p>
+              <p class="mb-5 fs-4">Lorectetur adipisicing elit. Velit vero doloremque fuga quia maxime. Cupiditate!</p>
+              <a href="" class="btn btn-outline-white w-25 mx-auto">Read More</a>
+            </div>
+            <div class="carousel-item text-center p-5 justify-content-center">
+              <h1>Autoplaying carousels without controls</h1>
+              <p class="mb-5">Lorem ipsum dolor sit amet consectetur dolore?</p>
+              <p class="mb-5 fs-4">Lorectetur adipisicing elit. Velit vero doloremque fuga quia maxime. Cupiditate!</p>
+              <a href="" class="btn btn-outline-white w-25 mx-auto">Read More</a>
+            </div>
+            <div class="carousel-item text-center p-5 justify-content-center">
+              <h1>Lorem ipsum dolo.</h1>
+              <p class="mb-5">Lorem ipsum dolor sit amet consectetur dolore?</p>
+              <p class="mb-5 fs-4">Lorectetur adipisicing elit. Velit vero doloremque fuga quia maxime. Cupiditate!</p>
+              <a href="" class="btn btn-outline-white w-25 mx-auto">Read More</a>
+            </div>
+          </div> 
+        </div>  
+        
+        <button class="btn btn-pink next"><i class="bi bi-arrow-right-circle-fill"></i></button>
       </div>
+      
+      
 
     </section>
     <section id="service">
@@ -419,9 +446,28 @@
         >
         <i class="bi bi-arrow-up"></i>
 </button>
+
   <script src="./anime.min.js"></script>
   <script src="./path-slider.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const imageSlide = new bootstrap.Carousel('#image_slide');
+    const textSlide = new bootstrap.Carousel('#text_slide');
+
+    document.getElementsByClassName("prev")[0].addEventListener('click',function(){
+      imageSlide.prev();
+      textSlide.prev();
+
+    });
+
+    document.getElementsByClassName("next")[0].addEventListener('click',function(){
+      imageSlide.next();
+      textSlide.next();
+
+    });
+
+  </script>
   <script src="./main.js"></script>
+ 
 </body>
 </html>
